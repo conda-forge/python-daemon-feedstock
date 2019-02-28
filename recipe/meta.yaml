@@ -1,4 +1,4 @@
-{% set version = "2.2.3" %}
+{% set version = "2.1.2" %}
 
 package:
   name: python-daemon
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/python-daemon/python-daemon-{{ version }}.tar.gz
-  sha256: affeca9e5adfce2666a63890af9d6aff79f670f7511899edaddca7f96593cc25
+  sha256: 261c859be5c12ae7d4286dc6951e87e9e1a70a882a8b41fd926efc1ec4214f73
   # https://pagure.io/python-daemon/issue/5
   patches:
     - fix_py3.patch  # [not win]
