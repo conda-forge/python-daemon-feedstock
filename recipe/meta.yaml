@@ -1,4 +1,4 @@
-{% set version = "2.2.3" %}
+{% set version = "2.2.4" %}
 
 package:
   name: python-daemon
@@ -6,14 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/python-daemon/python-daemon-{{ version }}.tar.gz
-  sha256: affeca9e5adfce2666a63890af9d6aff79f670f7511899edaddca7f96593cc25
-  # https://pagure.io/python-daemon/issue/5
-  patches:
-    - fix_py3.patch  # [not win]
+  sha256: 57c84f50a04d7825515e4dbf3a31c70cc44414394a71608dee6cfde469e81766
 
 build:
-  skip: True  # [win]
   number: 0
+  skip: True  # [win]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -22,9 +19,11 @@ requirements:
     - pip
     - lockfile >=0.10
     - docutils
+    - twine
   run:
     - python
     - lockfile >=0.10
+    - setuptools
 
 test:
   imports:
