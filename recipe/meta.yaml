@@ -13,7 +13,7 @@ source:
 
 build:
   skip: True  # [win]
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -21,18 +21,22 @@ requirements:
     - python
     - pip
     - lockfile >=0.10
-    - docutils
   run:
     - python
     - lockfile >=0.10
+    - docutils
 
 test:
+  requires:
+    - pip
   imports:
     - daemon
+  commands:
+    - python -m pip check
 
 about:
   home: https://pagure.io/python-daemon/
-  license: Apache Software
+  license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE.ASF-2
   summary: Library to implement a well-behaved Unix daemon process.
