@@ -9,7 +9,7 @@ source:
   sha256: 57c84f50a04d7825515e4dbf3a31c70cc44414394a71608dee6cfde469e81766
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -17,21 +17,24 @@ requirements:
   host:
     - python
     - pip
-    - lockfile >=0.10
-    - docutils
     - twine
   run:
     - python
     - lockfile >=0.10
     - setuptools
+    - docutils
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - daemon
 
 about:
   home: https://pagure.io/python-daemon/
-  license: Apache Software
+  license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE.ASF-2
   summary: Library to implement a well-behaved Unix daemon process.
