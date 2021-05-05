@@ -9,17 +9,17 @@ source:
   sha256: bda993f1623b1197699716d68d983bb580043cf2b8a66a01274d9b8297b0aeaf
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
+  noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - twine
   run:
-    - python
+    - python >=3.6
     - lockfile >=0.10
     - setuptools
     - docutils
