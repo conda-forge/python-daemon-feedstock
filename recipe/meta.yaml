@@ -10,16 +10,16 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+  noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - twine
   run:
-    - python
+    - python >=3.6
     - lockfile >=0.10
     - setuptools
     - docutils
