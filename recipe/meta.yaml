@@ -1,4 +1,4 @@
-{% set version = "3.0.0" %}
+{% set version = "3.0.1" %}
 
 package:
   name: python-daemon
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/python-daemon/python-daemon-{{ version }}.tar.gz
-  sha256: 62dedf6026ba939288936de15fbfec2d802f0aa731df60c3f2c17e49463d351d
+  sha256: 6c57452372f7eaff40934a1c03ad1826bf5e793558e87fef49131e6464b4dae5
 
 build:
   number: 0
