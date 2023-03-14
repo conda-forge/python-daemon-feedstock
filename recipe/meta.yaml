@@ -38,7 +38,7 @@ about:
   home: https://pagure.io/python-daemon/
   summary: Library to implement a well-behaved Unix daemon process.
   dev_url: https://pagure.io/python-daemon/
-  license: Apache-2.0 AND GPL-3.0
+  license: Apache-2.0 AND GPL-3.0-or-later
   license_file:
     - LICENSE.ASF-2
     - LICENSE.GPL-3
