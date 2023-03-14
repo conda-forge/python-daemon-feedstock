@@ -1,43 +1,47 @@
+{% set name = "python-daemon" %}
 {% set version = "3.0.1" %}
 
 package:
-  name: python-daemon
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/python-daemon/python-daemon-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/python-daemon-{{ version }}.tar.gz
   sha256: 6c57452372f7eaff40934a1c03ad1826bf5e793558e87fef49131e6464b4dae5
 
 build:
-  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.0
+    - setuptools >=62.4.0
+    - docutils
     - pip
-    - twine
   run:
-    - python >=3.6
+    - python >=3.0
+    - setuptools >=62.4.0
     - lockfile >=0.10
-    - setuptools
     - docutils
 
 test:
-  requires:
-    - pip
-  commands:
-    - pip check
   imports:
     - daemon
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://pagure.io/python-daemon/
-  license: Apache-2.0
-  license_family: APACHE
-  license_file: LICENSE.ASF-2
   summary: Library to implement a well-behaved Unix daemon process.
+  dev_url: https://pagure.io/python-daemon/
+  license: Apache-2.0 AND GPL-3.0-or-later
+  license_file:
+    - LICENSE.ASF-2
+    - LICENSE.GPL-3
   dev_url: https://pagure.io/python-daemon/
 
 extra:
@@ -45,3 +49,4 @@ extra:
     - lincrosenbach
     - kfasolin
     - ocefpaf
+    - xylar
