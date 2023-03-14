@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-daemon-f
 
 Home: https://pagure.io/python-daemon/
 
-Package license: Apache-2.0 AND GPL-3.0
+Package license: Apache-2.0 AND GPL-3.0-or-later
 
 Summary: Library to implement a well-behaved Unix daemon process.
 
