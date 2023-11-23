@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -38,10 +38,11 @@ about:
   home: https://pagure.io/python-daemon/
   summary: Library to implement a well-behaved Unix daemon process.
   dev_url: https://pagure.io/python-daemon/
-  license: Apache-2.0 AND GPL-3.0-or-later
-  license_file:
-    - LICENSE.ASF-2
-    - LICENSE.GPL-3
+  # The package states that parts are licensed under Apache-2.0 and other
+  # parts under GPL-3.0-or-later. The final contents of the package are all
+  # licensed as Apache-2.0. Thus only one license applies to this package.
+  license: Apache-2.0
+  license_file: LICENSE.ASF-2
   dev_url: https://pagure.io/python-daemon/
 
 extra:
