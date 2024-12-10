@@ -42,7 +42,6 @@ about:
   # licensed as Apache-2.0. Thus only one license applies to this package.
   license: Apache-2.0
   license_file: LICENSE.ASF-2
-  dev_url: https://pagure.io/python-daemon/
 
 extra:
   recipe-maintainers:
