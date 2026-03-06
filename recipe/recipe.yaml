@@ -1,0 +1,53 @@
+schema_version: 1
+
+context:
+  version: "2.1.2"
+
+package:
+  name: python-daemon
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/python-daemon/python-daemon-${{ version }}.tar.gz
+  sha256: 261c859be5c12ae7d4286dc6951e87e9e1a70a882a8b41fd926efc1ec4214f73
+
+build:
+  number: 4
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools <82
+    - docutils
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - docutils
+    - lockfile >=0.10
+    - setuptools <82
+
+tests:
+  - python:
+      imports:
+        - daemon
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  homepage: https://pagure.io/python-daemon/
+  summary: Library to implement a well-behaved Unix daemon process.
+  license: GPL-3.0-only AND Apache-2.0
+  license_file:
+    - LICENSE.GPL-3
+    - LICENSE.ASF-2
+
+extra:
+  recipe-maintainers:
+    - lincrosenbach
+    - kfasolin
+    - ocefpaf
+    - xylar
